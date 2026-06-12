@@ -35,6 +35,7 @@
 * **数据留痕与复现**：所有在训练中暴露的生词、难句和语法盲点将被自动捕获，并在后续的复习流中以最高优先级重新编排回练。
 
 ---
+
 ## 📅 路线图与上线排期 (Roadmap & Timeline)
 
 目前项目正处于高频迭代的冲刺阶段，整体开发进度已完成 **95%**。以下是明确的上线时间节点：
@@ -79,5 +80,47 @@
 * ⏱️ **轻量且有力量**：交互无压力，但底层逻辑具备极强的学习节奏与纪律感。
 
 这不仅是一个工具，更是一个陪伴你突破语言天花板的、值得长期信赖的英语学习算法数字教练。
+```mermaid
+graph TD
+    %% 样式定义
+    classDef aiStyle fill:#2196F3,stroke:#1976D2,stroke-width:2px,color:#fff;
+    classDef uiStyle fill:#FF9800,stroke:#F57C00,stroke-width:2px,color:#fff;
+    classDef coreStyle fill:#4CAF50,stroke:#388E3C,stroke-width:2px,color:#fff;
 
+    %% 节点连接
+    A[用户导入/选择资源] --> B(AI 算法模型核心)
+    
+    subgraph AI 智能动态接管层
+        B --> C[智能任务排产]
+        C --> D[自适应遗忘曲线编排]
+    end
+    
+    D --> E[无感多模态训练舱]
+    
+    subgraph UI/UX 极致沉浸界面
+        E --> F[熏听模式]
+        E --> G[智能单词拆解]
+        E --> H[结构化跟读复述]
+    end
+    
+    F --> I[实时高频数据反馈]
+    G --> I
+    H --> I
+    
+    I -->|捕获生词与难句| D
+    I -->|更新能力模型| B
+
+    %% 样式绑定（分行书写，规避解析器Bug）
+    class B aiStyle;
+    class C aiStyle;
+    class D aiStyle;
+    class Q aiStyle;
+    
+    class E uiStyle;
+    class F uiStyle;
+    class G uiStyle;
+    class H uiStyle;
+    
+    class A coreStyle;
+    class I coreStyle;
 ```
